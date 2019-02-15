@@ -1,18 +1,22 @@
 .code {
 	color: #4444aa;
 	background-color: #ffffff;
+	font-family : monospace !important;
 }
 .output {
 	color: #44aa44;
 	background-color: #f8f8f8;
+	font-family : monospace !important;
 }
 .verbose {
 	color: #444444;
 	background-color: #f8f8f8;
+	font-family : monospace !important;
 }
 .data {
 	color: #444444;
 	background-color: #f8f8f8;
+	font-family : monospace !important;
 }
 .gwt-TextArea {
 	color: #888888;
