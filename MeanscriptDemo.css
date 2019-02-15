@@ -1,28 +1,27 @@
 .code {
 	color: #4444aa;
 	background-color: #ffffff;
-	font-family : monospace !important;
+	font-family : courier, monospace;
 }
 .output {
 	color: #44aa44;
 	background-color: #f8f8f8;
-	font-family : monospace !important;
+	font-family : courier, monospace;
 }
 .verbose {
 	color: #444444;
 	background-color: #f8f8f8;
-	font-family : monospace !important;
+	font-family : courier, monospace;
 }
 .data {
 	color: #444444;
 	background-color: #f8f8f8;
-	font-family : monospace !important;
+	font-family : courier, monospace;
 }
 .gwt-TextArea {
 	color: #888888;
-	font-family : monospace !important;
+	font-family : courier, monospace;
 	
-	font-size: 8px !important;
 	overflow:auto; 
 }
 body {
