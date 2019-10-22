@@ -1,17 +1,25 @@
 .code {
 	color: #4444aa;
 	background-color: #ffffff;
-	font-family : monospace !important;
+	font-size: 100%;
+	font-family : "Lucida Console", monospace !important;
+	letter-spacing: 0.05em;
 }
 .output {
 	color: #44aa44;
 	background-color: #f8f8f8;
 	font-family : monospace !important;
+	font-size: 100%;
+	font-family : "Lucida Console", monospace !important;
+	font-weight: bold;
+	letter-spacing: 0.05em;
 }
 .verbose {
 	color: #444444;
 	background-color: #f8f8f8;
-	font-family : monospace !important;
+	font-size: 100%;
+	font-family : "Lucida Console", monospace !important;
+	letter-spacing: 0.05em;
 }
 .data {
 	color: #444444;
@@ -24,6 +32,20 @@
 	
 	font-size: 8px !important;
 	overflow:auto; 
+}
+.logo{
+}
+.button{
+    background: url(button_bg.png);
+    background-repeat: no-repeat;
+    background-size: 70px 60px;
+    cursor:pointer;
+    border: none;
+    width: 70px;
+    height: 60px;
+}
+.button img {
+    opacity: 0.7;
 }
 body {
    margin: 0;
