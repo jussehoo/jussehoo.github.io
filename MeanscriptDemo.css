@@ -2,29 +2,26 @@
 	color: #4444aa;
 	background-color: #ffffff;
 	font-size: 100%;
-	font-family : "Lucida Console", monospace !important;
-	letter-spacing: 0.05em;
+	font-family : Consolas, Menlo, Monaco, monospace !important;
 }
 .output {
 	color: #44aa44;
 	background-color: #f8f8f8;
 	font-family : monospace !important;
 	font-size: 100%;
-	font-family : "Lucida Console", monospace !important;
+	font-family : Consolas, Menlo, Monaco, monospace !important;
 	font-weight: bold;
-	letter-spacing: 0.05em;
 }
 .verbose {
 	color: #444444;
 	background-color: #f8f8f8;
 	font-size: 100%;
-	font-family : "Lucida Console", monospace !important;
-	letter-spacing: 0.05em;
+	font-family : Consolas, Menlo, Monaco, monospace !important;
 }
 .data {
 	color: #444444;
 	background-color: #f8f8f8;
-	font-family : monospace !important;
+	font-family : Consolas, Menlo, Monaco, monospace !important;
 }
 .gwt-TextArea {
 	color: #888888;
