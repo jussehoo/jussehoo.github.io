@@ -26,23 +26,38 @@
 .gwt-TextArea {
 	color: #888888;
 	font-family : monospace !important;
-	
 	font-size: 8px !important;
 	overflow:auto; 
 }
 .logo{
 }
+.ui_buttons {
+	text-align: center;
+}
 .button{
-    background: url(button_bg.png);
-    background-repeat: no-repeat;
-    background-size: 70px 60px;
-    cursor:pointer;
-    border: none;
-    width: 70px;
-    height: 60px;
+  background-color: #6666ff;
+  border: none;
+  color: white;
+  padding: 2px 12px;
+  border: none;
+  /*border-radius: 12px 12px 12px 12px ;*/
+  
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 6px #ccc;
+        margin:5px;
+}
+.button:hover {
+  background-color: #7777ff;
+}
+.button:active {
+  background-color: #8888dd;
+  box-shadow: 0 3px #ccc;
+  transform: translateY(3px);
 }
 .button img {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 body {
    margin: 0;
