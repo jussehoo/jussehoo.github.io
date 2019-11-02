@@ -1,6 +1,15 @@
-## OBSOLETE: updated version in web editor folder
-
-# Summary
+<html>
+<head>
+<title>Meanscript reference</title>
+<link rel = "stylesheet" type = "text/css" href = "MeanscriptDemo.css" />
+ <style>
+  i {color: #888888;}
+</style> 
+</html>
+<body class="doc">
+<div style="max-width:680px; margin: 10px">
+<h1>Meanscript reference</h1>
+<h2>Summary</h2>
 
 <pre>
 int a                   // define integer with a default value (0)
@@ -18,15 +27,16 @@ prints name             // prints a string
 // define a struct with two members: name and id
 struct person [text name, int id]     
 person p                 // define struct variable
+person p2: "John" 5432   // define struct variable with initial values
 p.name: "Jack"           // assign struct variable member
 
 // define a function that returns a value
 func int increase [int foo] { return (sum foo 1) }
 </pre>
 
-# Types
+<h2>Types</h2>
 
-**int**
+<h3>int</h3>
 
 Define an integer variable.
 <pre>
@@ -34,18 +44,19 @@ int a         // defaul value 0
 int b: 123    // initial value 123
 </pre>
 
-**text**
+<h3>text</h3>
 
 Define an immutable string variable.
 <pre>
 text name: "Jack"
 </pre>
-**bool**
+
+<h3>bool</h3>
 TBD
 
-# Keywords
+<h2>Keywords</h2>
 
-**func** _return-type function-name [arguments] { function-body }_
+<h3>func <i>return-type function-name [arguments] { function-body }</i></h3>
 
 Define a function.
 <pre>
@@ -61,7 +72,7 @@ int three: (increaseByOne two)
 </pre>
 
 
-**struct** _name [member-definitions]_
+<h3>struct <i>name [member-definitions]</i></h3>
 
 <pre>
 struct vec [int x, int y]
@@ -79,13 +90,13 @@ person boss
 boss.position.x: 34
 </pre>
 
-**return** value
+<h3>return <i>value</i></h3>
 
 Returns value in a function.
 
-# Core functions
+<h2>Core functions</h2>
 
-**sum** _int int_
+<h3>sum <i>int int</i></h3>
 
 Return sum of two integers.
 <pre>
@@ -93,28 +104,38 @@ int two: 2
 int five: (sum two 3)
 </pre>
 
-**sub** _int int_
+<h3>sub <i>int int</i></h3>
 
 Subtraction.
 <pre>
 int two: (sub 5 3)
 </pre>
 
-_bool_ **eq** _int int_
+<h3><i>bool</i> eq <i>int int</i></h3>
 
 Return true if arguments are equal.
 
-**if** _bool code-block_
+<h3>if <i>bool code-block</i></h3>
 
 Conditional execution.
 <pre>
 if (eq foo 5) { print "foo equals five" }
 </pre>
 
-**print** _int_
+<h3>print <i>int</i></h3>
 
 Print an integer.
 
-**prints** _text_
+<h3>prints <i>text</i></h3>
 
 Print text.
+<p>
+&nbsp;
+<hr>
+<p>
+Copyright &copy; 2019
+<p>
+&nbsp;
+</div>
+</body>
+</html>

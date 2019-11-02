@@ -1,0 +1,184 @@
+<html>
+<head>
+<title>Meanscript</title>
+<link rel = "stylesheet" type = "text/css" href = "MeanscriptDemo.css" />
+</html>
+<body class="doc">
+<div style="max-width:680px; margin: 10px">
+<img src="logo.png" alt="title" width=450 height=100 align=center />
+<p>
+Meanscript is a multi-platform scripting language, still on prototyping level.
+It can be used for data saving and transfer, and programming as an interpreted programming language.
+Data can be represented in both script (human-readable) and binary format.
+
+<!-- This text is aimed for programmers, but some parts may be readable for others too. -->
+<p>
+Couple of examples: print text and define a recursive function that returns <i>n</i> th Fibonacci number.
+
+<pre>
+print "Hello world!"
+</pre>		
+<pre>
+func int Fibonacci [int n] {
+    if (n < 3) { return 1 }
+    return (sum 
+        (Fibonacci (n - 1))
+        (Fibonacci (n - 2)))  
+}
+print (Fibonacci 7)
+</pre>		
+
+
+<h2>Featuring</h2>
+
+<ul>
+ <li> Support C#, C++, Java, and JavaScript.
+ <li> <b>Meanscript compiler</b> translates script to bytecode (binary format)
+ <li> Meanscript <b>interpreter</b> reads and executes bytecode by iterative, non-blocking execution
+ <li> Read and write values from/to Meanscript variables and data structures
+ <li> Call Meascript functions from your source code, or your callbacks from Meanscript.
+ <li> Basic data types: integer, string, boolean.
+ <li> Define data structures (struct/class)
+ <li> Define your own, additional data types from your source code
+ <li> Built-in data structures: array, list, map (dictionary).
+ <li> Program basic functions with argument lists, return values, conditions ("if"), loops ("while"), etc.
+</ul>
+
+<h2>Meanscript's design fundamentals</h2>
+
+<ul>
+ <li><b>Practical</b>. All-in-one language supporting programming, structured data in many forms, and script and binary formats.
+ <li><b>Minimal</b> core and syntax, easy to write and read. <!-- Most minimalistic language you can do anything with!-->
+ <li><b>Easy to expandable</b> by adding your own data types and callbacks. 
+ <li><b>Easy to set up, stand-alone</b>. Copy Meanscript source code to your project and start scripting.
+ <li><b>Convenient</b>. Simple interface, easy to debug, and strong typing and type checking to avoid elusive bugs. Smooth crashing by exception catching and with informative error messages.
+ <li><b>Iterative</b>, non-blocking script execution (instead of recursive, blocking execution). You can run the script step-by-step, and do other things between, as the interpreter saves its own state.<!-- It enables waiting, triggers, events etc. without using threads or other platform support.-->
+</ul>
+
+<!-- 
+## What can it be used for?
+
+ * Serializing and transmitting structured data, in byte code or script
+ * Run scripts
+ * Access data and code from your source code (Java, C#, etc.)
+ * Make native call from script, using callbacks.
+ * Make remote procedure calls.
+-->
+ 
+<h2>Examples</h2>
+
+<i>(Future plans)</i>
+
+<p>
+You can access Meanscript data from your source code.
+For example compile the next script to a binary file called <i>example.bin</i>.
+
+<pre>
+text name: "John"
+int age: 38
+</pre>
+
+Read and access data from your scource code, for example (in pseudo-Java)
+
+<pre>
+Meanscript ms = Meanscript.compile("example.bin");
+String name = ms.getText("name");
+int age = ms.getInt("age");
+</pre>
+
+Define data structure with generated API for your source code, e.g.
+
+<pre>
+struct Person [text name, int age]
+</pre>
+
+Generate API with a Meanscript generation tool. In pseudo-Java:
+
+<pre>
+namespace MyMS {
+  class Person {
+    public Person();
+    
+    void    set_name(String name)  { ... }
+    String  get_name()             { ... }
+    void    set_age(int age)       { ... }
+    int     get_age()              { ... }
+  }
+}
+</pre>
+
+Create data using the new struct <i>Person</i>.
+
+<pre>
+Person boss: ["John", 38]
+Person janitor: ["Jack", 65]
+</pre>
+
+Access data from your source code.
+
+<pre>
+MyMS.Person bossData ms.getData<MyMS.Person>("boss"); // auto-generated class
+
+// 'get_name' is generated from member 'name' by adding 'get_'
+	
+print(bossData.get_name() + " is the boss"); // Prints "John is the boss".
+</pre>
+
+Create data using data strutures. For example create a list of <i>Person</i> type of items,
+using built-in Meascript list:
+
+<pre>
+list [Person] personList
+personList.add ["John", 38]
+personList.add ["Jane", 57]
+// ...
+personList.add ["Jack", 45]
+</pre>
+
+Access data from your source code.
+
+<pre>
+MS.MList list = ms.getList("personList"); // Class MS.MList is part of Meanscript core
+Person second = list.getAt<MyMS.Person>(1);
+Person last = list.getLast<MyMS.Person>();
+print(second.get_name() + " is the 2nd"); // prints "Jane is the 2nd"
+</pre>
+
+<!--
+
+## Future plans
+
+ * Meanscript editor
+ * Support language's own serialization
+ * Wait/pause, triggers, events, etc.
+ * Unit tests
+ * Class-like features: struct (~class) includes funtions that can be overridden by changing function body, etc.
+ -->
+<!-- 
+How does it work?
+
+Meanscript parser takes in the script text, read it, and make a parse tree of it.
+Parse tree consists of tokens which are variable names, values, function calls, etc.
+Parse treeâ€™s sub-trees can be expressions, code blocks, structure definitions, etc.
+When you execute the script Meanscript interpreter iterate through the parse tree and execute the commands in it.
+Commands add data to Meanscriptâ€™s data map, and the data can be accessed by the script itself or external calls.
+Data consists of atomic variables (integers, text, reference to a code block), data structures (maps, lists, etc.) and functions.
+
+Meanscript's Java implementation uses following language features (considering things that can cause problems when porting from Java to other languages):
+Exceptions
+LinkedList
+TreeMap
+assert
+console print (can be overridden)
+-->
+
+<p>
+&nbsp;
+<hr>
+<p>
+Copyright &copy; 2019
+<p>
+&nbsp;
+</div>
+</body>
+</html>

@@ -1,3 +1,5 @@
+## OBSOLETE: updated version in web editor folder
+
 <img src="https://jussehoo.github.io/logo.png" alt="title" width=450 height=100 align=center />
 
 Meanscript is a multi-platform scripting language, still on prototyping level.
