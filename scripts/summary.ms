@@ -13,6 +13,6 @@ func int addTwo [int a] {
 print (addTwo 3)
 
 struct vec [int x, int y]
-vec position: 78 90
+vec position: 78, 90
 print position.x
 print position.y

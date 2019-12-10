@@ -2,14 +2,22 @@
 <head>
 <title>Meanscript</title>
 <link rel = "stylesheet" type = "text/css" href = "MeanscriptDemo.css" />
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet" />
 </html>
 <body class="doc">
 <div style="max-width:680px; margin: 10px">
 <img src="logo.png" alt="title" width=450 height=100 align=center />
 <p>
-Meanscript is a multi-platform scripting language, still on prototyping level.
-It can be used for data saving and transfer, and programming as an interpreted programming language.
-Data can be represented in both script (human-readable) and binary format.
+Meanscript is a multi-platform scripting language
+for data saving and transfer, and for programming as an interpreted programming language.
+Data can be represented in human-readable script format and compact binary bytecode.
+Data TODO: ACCESS FROM SOURCE CODE
+Meanscript features basic data types, data structures, and basic programming,
+like functions and conditional expressions.
+
+<p>
+
+<img src=MS_slides.png width=680>
 
 <!-- This text is aimed for programmers, but some parts may be readable for others too. -->
 <p>
@@ -33,26 +41,28 @@ print (Fibonacci 7)
 
 <ul>
  <li> Support C#, C++, Java, and JavaScript.
- <li> <b>Meanscript compiler</b> translates script to bytecode (binary format)
+ <li> <b>Meanscript compiler</b> translates text script to <b>bytecode</b> (binary format)
+ <li> Generate Meanscript data and byte code from your source code 
  <li> Meanscript <b>interpreter</b> reads and executes bytecode by iterative, non-blocking execution
  <li> Read and write values from/to Meanscript variables and data structures
- <li> Call Meascript functions from your source code, or your callbacks from Meanscript.
+ <li> Call Meascript <b>functions</b> from your source code, or your <b>callbacks</b> from Meanscript.
  <li> Basic data types: integer, string, boolean.
- <li> Define data structures (struct/class)
+ <li> Define <b>data structures</b> (like <i>struct</i> and <i>class</i> in other languages)
  <li> Define your own, additional data types from your source code
- <li> Built-in data structures: array, list, map (dictionary).
- <li> Program basic functions with argument lists, return values, conditions ("if"), loops ("while"), etc.
+ <li> Built-in data structures: <b>array, list, map</b> (dictionary).
+ <li> Program basic functions with arguments, return values, conditions ("if"), loops ("while"), etc.
 </ul>
 
 <h2>Meanscript's design fundamentals</h2>
 
 <ul>
- <li><b>Practical</b>. All-in-one language supporting programming, structured data in many forms, and script and binary formats.
- <li><b>Minimal</b> core and syntax, easy to write and read. <!-- Most minimalistic language you can do anything with!-->
- <li><b>Easy to expandable</b> by adding your own data types and callbacks. 
- <li><b>Easy to set up, stand-alone</b>. Copy Meanscript source code to your project and start scripting.
- <li><b>Convenient</b>. Simple interface, easy to debug, and strong typing and type checking to avoid elusive bugs. Smooth crashing by exception catching and with informative error messages.
- <li><b>Iterative</b>, non-blocking script execution (instead of recursive, blocking execution). You can run the script step-by-step, and do other things between, as the interpreter saves its own state.<!-- It enables waiting, triggers, events etc. without using threads or other platform support.-->
+ <li><b>Practical.</b> Many ways to use it. Both convenient and efficient.
+ <li><b>Minimal</b> language core and syntax, easy to write and read.
+ <li><b>Easy to expand. </b> Add your own data types and callbacks. 
+ <li><b>Easy to set up, stand-alone.</b> Add Meanscript source code to your project and start scripting.
+ Minimal dependencies to a platform and other libraries.
+ <li><b>Convenient</b>. Simple interface, easy to debug, and strong typing and type checking to avoid elusive bugs. Smooth crashing by exception hangling and with informative error messages.
+ <li><b>Iterative</b>, non-blocking script execution. <!-- (instead of recursive, blocking execution) It enables waiting, triggers, events etc. without using threads or other platform support.-->
 </ul>
 
 <!-- 
@@ -80,11 +90,13 @@ int age: 38
 
 Read and access data from your scource code, for example (in pseudo-Java)
 
-<pre>
+<pre class=native>
 Meanscript ms = Meanscript.compile("example.bin");
 String name = ms.getText("name");
 int age = ms.getInt("age");
 </pre>
+
+<h3>Auto-generated structures</h3>
 
 Define data structure with generated API for your source code, e.g.
 
@@ -94,7 +106,7 @@ struct Person [text name, int age]
 
 Generate API with a Meanscript generation tool. In pseudo-Java:
 
-<pre>
+<pre class=native>
 namespace MyMS {
   class Person {
     public Person();
@@ -119,10 +131,11 @@ Access data from your source code.
 <pre>
 MyMS.Person bossData ms.getData<MyMS.Person>("boss"); // auto-generated class
 
-// 'get_name' is generated from member 'name' by adding 'get_'
-	
 print(bossData.get_name() + " is the boss"); // Prints "John is the boss".
 </pre>
+
+
+<h3>Built-in data structures</h3>
 
 Create data using data strutures. For example create a list of <i>Person</i> type of items,
 using built-in Meascript list:
@@ -137,12 +150,31 @@ personList.add ["Jack", 45]
 
 Access data from your source code.
 
-<pre>
-MS.MList list = ms.getList("personList"); // Class MS.MList is part of Meanscript core
+<pre class=native>
+MS.MList list = ms.getList("personList"); // Class MS.MList would be part of Meanscript core
 Person second = list.getAt<MyMS.Person>(1);
 Person last = list.getLast<MyMS.Person>();
 print(second.get_name() + " is the 2nd"); // prints "Jane is the 2nd"
 </pre>
+
+<h3>Data synchronization</h3>
+
+Keep remote data updated by sending modifications (diff) instead of all data.
+For example, modify your data:
+
+<pre class=native>
+MS.MList list = ms.getList("personList");
+list.first.setText("name", "Carl");
+</pre>
+
+Export changes in script...
+
+<pre>
+@synchCheckSum: b9cad5cbdaca95fe
+personList.first.name: "Carl"
+</pre>
+
+...or binary format. Send modifications over network and apply to remote Meascript data object.
 
 <!--
 
@@ -176,7 +208,7 @@ console print (can be overridden)
 &nbsp;
 <hr>
 <p>
-Copyright &copy; 2019
+Copyright (C) 2019
 <p>
 &nbsp;
 </div>

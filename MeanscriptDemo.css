@@ -42,16 +42,22 @@ pre {
   font-size: 12px !important;
   font-family : Consolas, Menlo, Monaco, monospace !important;
 }
+.native {
+	background-color: #e0e0ff;
+	color: #444488;
+}
 .button{
   background-color: #6666ff;
   border: none;
-  color: white;
+  color: #aaaaff;
   padding: 2px 12px;
   border: none;
   border-color: #ff0000;
   /*border-radius: 12px 12px 12px 12px ;*/
   
+  font-family: "Fira Sans", Verdana, Geneva, sans-serif;
   border-radius: 15px;
+  font-size: 12px;
   text-align: center;
   text-decoration: none;
   box-shadow: 0 6px #ccc;
@@ -75,10 +81,14 @@ body {
    width: 100%;
 }
 .doc {
-   font-family: Verdana, Geneva, sans-serif;
-  font-size: 12px !important;
+   font-family: "Fira Sans", Verdana, Geneva, sans-serif;
+   font-size: 14px !important;
    margin: 0px;
    padding: 0px;
+}
+h1, h2, h3, h4, h5, h6 
+{
+	margin-top: 30px;
 }
 
 
