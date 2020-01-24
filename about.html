@@ -6,13 +6,16 @@
 </html>
 <body class="doc">
 <div style="max-width:680px; margin: 10px">
-<img src="logo.png" alt="title" width=450 height=100 align=center />
-<p>
+<p align=center>
+<img src="logo.png" alt="title" width=450 height=100>
+<br>
+<img src="email.png" width=188>
+<p>&nbsp;<p>
 Meanscript is a multi-platform scripting language 
 for both storing and transferring data, as well as programming as an interpreted programming language.
 It's still on prototype level, but the idea is to combine best parts of
 existing scripting languages like JavaScript, JSON, and Protocol Buffers, while keeping
-it compact and easy to use. Meanscript would be a versatile, all-in-one tool for software
+it compact and easy to use. Meanscript aims to be a versatile, all-in-one tool for software
 projects. Some examples of use cases:
 <ul>
 <li>Save application data as human-readable script or compact binary format
@@ -42,8 +45,18 @@ func int getSum [int alpha, int beta] {  // Introduce a function with two argume
 }
 </pre>		
 <pre>
-struct vec [int x, int y]                // Introduce a structure (class) with two members
-vec position: 78, 90                     // Create a structure variable with initial values
+struct Vec [int x, int y ]               // Introduce a structure (class) with two members
+
+struct Person [                          // introduce another structure
+	text name,
+	Vec coordinates,
+	int yearOfBirth
+]
+
+Person [3] team:                         // Array of three persons using structs defined above
+	["Albert",    [321,546], 34],
+	["Bertta",  [546,321], 56],
+	["Carl",    [987,654], 78]
 </pre>		
 
 
@@ -52,28 +65,28 @@ vec position: 78, 90                     // Create a structure variable with ini
 <ul>
  <li> Support C#, C++, Java, and JavaScript.
  <li> <b>Meanscript compiler</b> translates text script to <b>bytecode</b> (binary format).
- <li> Read and write Meanscript data from your source code.
- <li> <b>Meanscript Builder</b> for generating data and byte code from your source code. 
  <li> Meanscript <b>interpreter</b> reads and executes bytecode by iterative, non-blocking execution.
- <li> Call Meascript <b>functions</b> from your source code, or your <b>callbacks</b> from Meanscript.
+ <li> Read and write Meanscript data from your source code.
  <li> Basic data types: integer and floating-point (decimal) number, text, boolean.
  <li> Define <b>data structures</b> (like <i>struct</i> and <i>class</i> in other languages).
+ <li> <b>Generate</b> classes in your source code language for Meanscript data and structures (like <i>Protobuf</i> builder)  
+ <!-- <li> <b>Meanscript Builder</b> for generating data and byte code from your source code.--> 
  <li> Built-in data structures: <b>array, list, map</b> (collection of key-value pairs, a dictionary).
  <li> Define your own, additional data types from your source code, e.g. high precision number type, image, etc.
  <li> Functions with arguments, return values, conditions ("if"), loops ("while"), etc.
- <li> Non-blocking, step-by-step execution.
+ <li> Call Meanscript <b>functions</b> from your source code, or your <b>callbacks</b> from Meanscript.
 </ul>
 
-<h2>Meanscript's design fundamentals</h2>
+<h2>Meanscript design fundamentals</h2>
 
 <ul>
- <li><b>Practical.</b> Convenient and efficient solution for all kind of software.
- <li><b>Minimal</b> language core and syntax: easy to read and write.
+ <li><b>Practical.</b> All-in-one solution for various software.
+ <li><b>Minimal</b> language core and syntax: small and fast.
  <li><b>Easy to expand. </b> Integrate to your own source code with your own data types and callbacks. 
- <li><b>Easy to set up, stand-alone.</b> Add Meanscript source code to your project and start scripting.
- Minimal dependencies to platforms and other libraries.
- <li><b>Convenient</b>. Simple interface, easy to debug, and strong typing and type checking to avoid elusive bugs. Smooth crashing by exception hangling, along with informative error messages.
- <li><b>Iterative</b>, non-blocking script execution. <!-- (instead of recursive, blocking execution) It enables waiting, triggers, events etc. without using threads or other platform support.-->
+ <li><b>Easy to set up, stand-alone.</b> Add Meanscript source code to your project and start scripting!
+ Minimal dependencies to platforms and other software.
+ <li><b>Convenient</b>. Easy to read and write, simple interface, easy to debug, and strong typing and type checking to avoid elusive bugs. Smooth crashing by exception hangling, along with informative error messages.
+ <li><b>Iterative</b>, non-blocking bytecode execution. <!-- (instead of recursive, blocking execution) It enables waiting, triggers, events etc. without using threads or other platform support.-->
 </ul>
 
  
@@ -96,6 +109,16 @@ String name = ms.getText("name");
 int age = ms.getInt("age");
 </pre>
 
+You can generate similar data also from your source code by using Meanscript builder.
+
+<pre class=native>
+MSBuilder builder = new MSBuilder();
+builder.addText("name", "John");
+builder.addInt("age", 38);
+builder.generate();
+builder.writeFile("example.bin");
+</pre>
+
 <h3>Auto-generated structures</h3>
 
 
@@ -106,22 +129,20 @@ Define data structure with generated API for your source code, e.g.
 struct Person [text name, int age]
 </pre>
 
-Generate API with a Meanscript generation tool. In pseudo-Java:
+Generate API with a Meanscript generation tool. The result in pseudo-Java would be:
 
 <pre class=native>
-namespace MyMS {
-  class PersonReader {
-    public PersonReader( ... );
-    
-    String  get_name()             { ... }
-    int     get_age()              { ... }
-  }
-  class PersonWriter {
-    public PersonWriter( ... );
-    
-    void    set_name(String name)  { ... }
-    void    set_age(int age)       { ... }
-  }
+class PersonReader {
+  public PersonReader( ... );
+  
+  String  get_name()             { ... }
+  int     get_age()              { ... }
+}
+class PersonWriter {
+  public PersonWriter( ... );
+  
+  void    set_name(String name)  { ... }
+  void    set_age(int age)       { ... }
 }
 </pre>
 
@@ -138,6 +159,7 @@ Or from your source code:
 MSBuilder builder = new MSBuilder( ... );
 PersonWriter boss = builder.addStruct(PersonWriter.ID, "boss");
 boss.set_name("John");
+boss.set_age(38);
 // ...
 builder.writeFile("example.bin");
 </pre>
@@ -152,6 +174,7 @@ print(bossData.get_name() + " is the boss"); // Prints "John is the boss".
 </pre>
 
 
+<!--
 <h3>Built-in data structures</h3>
 
 <i>(Future plans)</i>
@@ -176,6 +199,8 @@ Person last = list.getLast<MyMS.Person>();
 print(second.get_name() + " is the 2nd"); // prints "Jane is the 2nd"
 </pre>
 
+
+
 <h3>Data synchronization</h3>
 
 Keep remote data updated by sending modifications (diff) instead of all data.
@@ -194,7 +219,7 @@ personList.first.name: "Carl"
 </pre>
 
 ...or binary format. Send modifications over network and apply to remote Meascript data object.
-
+-->
 <!--
 
 ## Future plans

@@ -79,6 +79,7 @@ body {
    padding: 0;
    height: 100%;
    width: 100%;
+   line-height: 1.5;
 }
 .doc {
    font-family: "Fira Sans", Verdana, Geneva, sans-serif;
