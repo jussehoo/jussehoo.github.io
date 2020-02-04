@@ -1,7 +1,7 @@
 int foo: 123
-int bar: 456
+float bar: 456.7
 print foo
-print bar
+printf bar
 
 text name: "Jack"
 prints name
