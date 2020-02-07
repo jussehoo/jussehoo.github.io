@@ -1501,20 +1501,20 @@ Core$lambda$6$Type,,com.meanscript.Core$lambda$6$Type,,com/meanscript/Core.java,
 Tv,com.meanscript.Core$lambda$6$Type::Core$lambda$6$Type() <init>,com.meanscript.Core$lambda$6$Type,Core$lambda$6$Type,com/meanscript/Core.java,155,0
 Uv,com.meanscript.Core$lambda$6$Type::action(Lcom/meanscript/MeanMachine;Lcom/meanscript/MArgs;)V,com.meanscript.Core$lambda$6$Type,action,com/meanscript/Core.java,155,0
 Generator,,com.meanscript.Generator,,com/meanscript/Generator.java,7,-1
-Vv,com.meanscript.Generator::$argumentStructPush(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;Lcom/meanscript/StructDef;)I,com.meanscript.Generator,$argumentStructPush,com/meanscript/Generator.java,363,0
-Wv,com.meanscript.Generator::$argumentStructPush(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;Lcom/meanscript/StructDef;I)I,com.meanscript.Generator,$argumentStructPush,com/meanscript/Generator.java,368,0
-Xv,com.meanscript.Generator::$arrayPush(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;II)I,com.meanscript.Generator,$arrayPush,com/meanscript/Generator.java,316,0
+Vv,com.meanscript.Generator::$argumentStructPush(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;Lcom/meanscript/StructDef;IZ)V,com.meanscript.Generator,$argumentStructPush,com/meanscript/Generator.java,385,0
+Wv,com.meanscript.Generator::$arrayPush(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;II)I,com.meanscript.Generator,$arrayPush,com/meanscript/Generator.java,324,0
+Xv,com.meanscript.Generator::$callArgumentPush(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;Lcom/meanscript/StructDef;I)V,com.meanscript.Generator,$callArgumentPush,com/meanscript/Generator.java,366,0
 Yv,com.meanscript.Generator::$generate(Lcom/meanscript/Generator;)Lcom/meanscript/ByteCode;,com.meanscript.Generator,$generate,com/meanscript/Generator.java,37,0
-Zv,com.meanscript.Generator::$generateAssignment(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;)V,com.meanscript.Generator,$generateAssignment,com/meanscript/Generator.java,260,0
-$v,com.meanscript.Generator::$generateCallbackCall(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;)Lcom/meanscript/MCallback;,com.meanscript.Generator,$generateCallbackCall,com/meanscript/Generator.java,249,0
+Zv,com.meanscript.Generator::$generateAssignment(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;)V,com.meanscript.Generator,$generateAssignment,com/meanscript/Generator.java,259,0
+$v,com.meanscript.Generator::$generateCallbackCall(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;)Lcom/meanscript/MCallback;,com.meanscript.Generator,$generateCallbackCall,com/meanscript/Generator.java,248,0
 _v,com.meanscript.Generator::$generateCodeBlock(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;)V,com.meanscript.Generator,$generateCodeBlock,com/meanscript/Generator.java,132,0
 aw,com.meanscript.Generator::$generateExpression(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;)V,com.meanscript.Generator,$generateExpression,com/meanscript/Generator.java,162,0
-bw,com.meanscript.Generator::$generateFunctionCall(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;Lcom/meanscript/Context;)I,com.meanscript.Generator,$generateFunctionCall,com/meanscript/Generator.java,232,0
+bw,com.meanscript.Generator::$generateFunctionCall(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;Lcom/meanscript/Context;)V,com.meanscript.Generator,$generateFunctionCall,com/meanscript/Generator.java,232,0
 cw,com.meanscript.Generator::$generateFunctionCode(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;)V,com.meanscript.Generator,$generateFunctionCode,com/meanscript/Generator.java,123,0
-dw,com.meanscript.Generator::$isFunctionOrCallback(Lcom/meanscript/Generator;Ljava/lang/String;)Z,com.meanscript.Generator,$isFunctionOrCallback,com/meanscript/Generator.java,423,0
-ew,com.meanscript.Generator::$resolveMember(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;)Lcom/meanscript/VarGen;,com.meanscript.Generator,$resolveMember,com/meanscript/Generator.java,430,0
-fw,com.meanscript.Generator::$singleArgumentPush(Lcom/meanscript/Generator;ILcom/meanscript/NodeIterator;I)I,com.meanscript.Generator,$singleArgumentPush,com/meanscript/Generator.java,572,0
-gw,com.meanscript.Generator::$squareBracketArgumentPush(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;Lcom/meanscript/StructDef;I)I,com.meanscript.Generator,$squareBracketArgumentPush,com/meanscript/Generator.java,336,0
+dw,com.meanscript.Generator::$isFunctionOrCallback(Lcom/meanscript/Generator;Ljava/lang/String;)Z,com.meanscript.Generator,$isFunctionOrCallback,com/meanscript/Generator.java,422,0
+ew,com.meanscript.Generator::$resolveMember(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;)Lcom/meanscript/VarGen;,com.meanscript.Generator,$resolveMember,com/meanscript/Generator.java,429,0
+fw,com.meanscript.Generator::$singleArgumentPush(Lcom/meanscript/Generator;ILcom/meanscript/NodeIterator;I)V,com.meanscript.Generator,$singleArgumentPush,com/meanscript/Generator.java,571,0
+gw,com.meanscript.Generator::$squareBracketArgumentPush(Lcom/meanscript/Generator;Lcom/meanscript/NodeIterator;Lcom/meanscript/StructDef;I)V,com.meanscript.Generator,$squareBracketArgumentPush,com/meanscript/Generator.java,341,0
 hw,com.meanscript.Generator::Generator(Lcom/meanscript/TokenTree;Lcom/meanscript/Semantics;Lcom/meanscript/Core;) <init>,com.meanscript.Generator,Generator,com/meanscript/Generator.java,15,0
 a,com.meanscript.Generator::bc,com.meanscript.Generator,bc,com/meanscript/Generator.java,13,-1
 b,com.meanscript.Generator::core,com.meanscript.Generator,core,com/meanscript/Generator.java,11,-1
