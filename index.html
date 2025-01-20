@@ -15,6 +15,22 @@
 	background-attachment: fixed;
 	background-size: cover;
 	}
+    .video-container {
+      position: relative;
+      width: 100%; /* Full width */
+      padding-bottom: 56.25%; /* Aspect ratio for 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; /* Fill horizontally */
+      height: 100%; /* Maintain aspect ratio */
+      border: 0;
+    }
 	</style> 
   </head>
   <body>
@@ -34,29 +50,41 @@ Design, graphics, and programming are made by me.
 	
 	<h2>Daily Dose of Crosswords</h2>
 	<p class="doc">
-	<br>Solve automatically generated mini crossword puzzles.
+	Solve automatically generated mini crossword puzzles.
 	<br><a href="https://meanwhale.itch.io/crossword-puzzle" target="_blank">More info and install at itch.io</a>
 	<p><!--<img src=crossword_screenshot.png>-->
 	
+	<!--
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/76-r0KtCyEA?si=nDnGF9joPbNeaqRn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	-->
+	
+	<div class="video-container">
+	<iframe src="https://www.youtube.com/embed/76-r0KtCyEA?si=nDnGF9joPbNeaqRn" title="YouTube video" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen></iframe>
+	</div>
 	
 	<p>
 	&nbsp;
 	<p>
 	<h2>Steelhead: Tactical Operations</h2>
 	<p class="doc">
-	<br>(S:T.OP.) for iOS and Android: Control a battle robot squad in this casual strategy game!
+	(S:T.OP.) for iOS and Android: Control a battle robot squad in this casual strategy game!
 	<br><a href="https://meanwhale.itch.io/stop" target="_blank">More info and install at itch.io</a>
 	<p>
 	
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/lhbRJWl0wq4?si=kQJm30lkyPAkl-8S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<div class="video-container">
+	<iframe src="https://www.youtube.com/embed/lhbRJWl0wq4?si=kQJm30lkyPAkl-8S" title="YouTube video" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen></iframe>
+	</div>
 	
 	<p>
 	&nbsp;
 	<p>
 	<h2>Rollers - Dice Battle</h2>
 	<p class="doc">
-	Coming soon:
+	Coming soon...
 	<p>
 	<img src=rollers_screenshot.png>
 
