@@ -151,7 +151,7 @@ h1 {
   font-family: "mont", "Fira Sans", Verdana, Geneva, sans-serif;
   color: #fff;
   border-top: 1px solid #fff; /* Line on top of the header */
-  border-bottom: 1px solid #fff; /* Line on bottom of the header */
+  /*border-bottom: 1px solid #fff; /* Line on bottom of the header */
   margin-top: 0em;
   margin-bottom: 1em;
   font-size: 3em;
