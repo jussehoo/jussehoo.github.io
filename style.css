@@ -54,6 +54,11 @@ a:hover {
 a:active {
   color: #eee;
 }
+.light {
+  font-family: "Fira Sans", Verdana, Geneva, sans-serif;
+  color: #eee;
+  font-size: 1em !important;
+}
 .doc {
   font-family: "Fira Sans", Verdana, Geneva, sans-serif;
   font-size: 1em !important;
